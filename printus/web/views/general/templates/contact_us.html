@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<section id="contact_us">
+	<div class="page-header">
+		<h1>Contact Us</h1>
+	</div>
+	<div class="row">
+		<div class="span4">
+			<h2>Why ?</h2>
+			<p>If you have a problem with the service, don't hesitate to contact us and make a good explaination of your problem.</p>
+		</div>
+		<div class="span8">
+			<form method="POST" action="{{ url_for('general.contact_us') }}" class="well">
+			    {{ form.csrf_token }}
+			    {{ form.hidden_tag() }}
+				<fieldset>
+					<div class="control-group">
+						<div class="controls">
+						     {{ form.title(class='span7', placeholder="Title") }}
+						</div>
+					</div>
+					<div class="control-group">
+						<div class="controls">
+							{{ form.description(class='span7', placeholder="Enter your description") }}
+						</div>
+					</div>
+					<div class="actions">
+						{{ form.submit(class='btn btn-primary') }}
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

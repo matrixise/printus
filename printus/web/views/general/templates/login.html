@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    body {
+        margin-top: 4em;
+        //background-color: #0067C8;
+    }
+
+</style>
+<section id="login_signup">
+<div class="row">
+    <div class="span8">
+        <ul class="thumbnails">
+            <li class="span8">
+            <a href="#" class="thumbnail">
+                <img src="http://www.uwo.ca/oncology/images/images_st/4878226_annual_report_300.jpg" alt="">
+                <!-- <img src="http://placehold.it/640x480" alt=""> -->
+            </a>
+            </li>
+        </ul>
+        <h2>Weclome on PrintUs</h2>
+        <p>Explore all your options with the various grid classes available to you. You can also mix and match different sizes.</p>
+    </div>
+    <div class="span4">
+        <form method="POST" action="{{ url_for('general.login') }}" class="well">
+            {{ form.csrf_token }}
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <div class="control-group">
+                    <div class="controls">
+                        {{ form.username(size=20, class='span3', placeholder="Username or email") }}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        {{ form.password(size=20, class='span3', placeholder="Password") }}
+                    </div>
+                </div>
+                {{ form.submit(class='btn btn-primary') }}
+            </fieldset>
+        </form>
+
+        <form method="POST" action="{{ url_for('general.signup') }}" class="well">
+            {{ signupForm.csrf }}
+            {{ signupForm.hidden_tag() }}
+            <fieldset>
+                <div class="control-group">
+                    <div class="controls">
+                        {{ signupForm.name(size=20, class='span3', placeholder="Your full name") }}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        {{ signupForm.email(size=20, class='span3', placeholder="Your email") }}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        {{ signupForm.password(size=20, class='span3', placeholder="Password") }}
+                    </div>
+                </div>
+                {{ signupForm.submit(class='btn btn-primary') }}
+            </fieldset>
+        </form>
+    </div>
+</div>	
+</section>
+
+
+{% endblock content %}

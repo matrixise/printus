@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<section id="report_new">
+	<div class="page-header">
+		<h1>Add a new report</h1>
+	</div>
+	<div class="row">
+		<div class="span3">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eros neque, fringilla a elementum sed, ornare sed metus. Praesent lobortis tristique nunc eu posuere. Aenean scelerisque risus a odio adipiscing elementum eu a tellus. Phasellus diam sem, gravida nec molestie ut, egestas eget lectus. Aenean commodo est ac mauris tincidunt in sagittis purus scelerisque. Vestibulum sed enim orci. Donec ultrices turpis non neque molestie pellentesque. Maecenas viverra, quam sit amet pellentesque porttitor, velit nisi malesuada elit, ut facilisis nisl neque et leo. Nulla cursus leo in mi dictum facilisis. Morbi et lacus lacus.</div>
+		<div class="span8">
+			<form method="POST" action="{{ url_for('general.reports_new') }}" class="form-horizontal">
+				    {{ form.csrf_token }}
+				    {{ form.hidden_tag() }}
+				<fieldset>
+					<div class="control-group">
+						{{ form.name.label(class='control-label') }}
+						<div class="controls">
+						     {{ form.name(size=20, class='span3', placeholder="Report name...") }}
+						     <p class="help-block">Set the name of the report</p>
+						</div>
+					</div>
+					<div class="control-group">
+						{{ form.report_file.label(class='control-label') }}
+						<div class="controls">
+							{{ form.report_file(class='span3') }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ form.description.label(class='control-label') }}
+						<div class="controls">
+							{{ form.description(rows=3, class='input-xlarge')}}
+						</div>
+					</div>
+					<div class="form-actions">
+						{{ form.submit(class='btn btn-primary') }}
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>	
+</section>
+
+
+{% endblock content %}
