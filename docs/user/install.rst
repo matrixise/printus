@@ -32,7 +32,7 @@ Cheeseshop Mirror
 ~~~~~~~~~~~~~~~~~
 
 If the Cheeseshop is down, you can also install PrintUs from one of the mirrors.
-`Create.io <http://crate.io>`_ is one of them::
+`Crate.io <http://crate.io>`_ is one of them::
 
     $ pip install -i http://simple.crate.io/ printus
 
