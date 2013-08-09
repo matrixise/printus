@@ -38,3 +38,5 @@ nosetests.xml
 # database
 printus/printus.db
 *.sql
+
+docs/_build
