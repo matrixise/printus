@@ -12,6 +12,8 @@ import sys
 from setuptools import setup
 from setuptools import find_packages
 
+from printus import release
+
 HERE = os.path.dirname(__file__)
 
 if not hasattr(sys, 'version_info') or sys.version_info < (2, 6, 0, 'final'):
@@ -28,14 +30,14 @@ with open(os.path.join(HERE, 'requirements.txt')) as fp:
 
 
 setup(
-    name                 = 'PrintUs',
-    version              = '0.1dev',
-    url                  = 'http://github.com/matrixise/printus/',
+    name                 = release.title,
+    version              = release.version,
+    url                  = release.url,
     license              = 'MIT',
-    description          = 'PrintUs is a Print Server on Redis Queue and HTTP',
+    description          = release.description,
     long_description     = README + '\n' + CHANGES,
-    author               = 'Stephane Wirtel',
-    author_email         = 'stephane@wirtel.be',
+    author               = release.author,
+    author_email         = release.author_email,
     packages             = find_packages(),
     include_package_data = True,
     zip_safe             = False,
@@ -47,7 +49,7 @@ setup(
     classifiers       = [
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
